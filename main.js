@@ -67,6 +67,10 @@ if (book) {
     e.preventDefault();
     if (!book.reportValidity()) return;
     const data = new FormData(book);
+    // Send ticked 'What's it for?' options as one readable line
+    const picks = data.getAll('for');
+    data.delete('for');
+    if (picks.length) data.set('for', picks.join(', '));
     const endpoint = book.dataset.endpoint;
     if (endpoint) {
       // Live: send the enquiry to the form service (e.g. Formspree)
@@ -74,7 +78,7 @@ if (book) {
         const res = await fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
         if (!res.ok) throw new Error('send failed');
       } catch (err) {
-        alert('Sorry, that didn’t send. Please email hello@christinalawson.com instead.');
+        alert('Sorry, that didn’t send. Please try again, or email hello@christinalawson.com.');
         return;
       }
     } else {
