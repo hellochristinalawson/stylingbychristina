@@ -919,3 +919,16 @@ a:hover .arr, button:hover .arr, a:focus-visible .arr { transform: translateX(3p
 .svc-hero--split .svc-hero__lead { margin: 0 0 28px; max-width: 34em; }
 .svc-hero--split .svc-hero__img { margin-top: 0; justify-self: end; max-width: 400px; }
 @media (max-width: 860px) { .svc-hero--split .svc-hero__in { grid-template-columns: 1fr; } .svc-hero--split .svc-hero__img { justify-self: start; max-width: 300px; } }
+
+/* Privacy policy */
+.legal { padding: clamp(48px, 6vw, 88px) 0; }
+.legal__in { max-width: 760px; }
+.legal h1 { margin: 0 0 8px; font-size: clamp(40px, 4.4vw, 64px); }
+.legal__date { margin: 0 0 32px; font: 600 11.5px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.legal h2 { margin: 36px 0 12px; font-size: clamp(24px, 2.2vw, 30px); }
+.legal p, .legal li { font-size: 16px; line-height: 1.7; color: var(--text); }
+.legal ul { margin: 0 0 16px; padding-left: 20px; }
+.legal li { margin-bottom: 8px; }
+.legal a { color: var(--red); }
+.form__privacy { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
+.form__privacy a { color: inherit; }
