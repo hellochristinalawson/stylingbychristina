@@ -71,21 +71,16 @@ if (book) {
     const picks = data.getAll('for');
     data.delete('for');
     if (picks.length) data.set('for', picks.join(', '));
-    const endpoint = book.dataset.endpoint;
-    if (endpoint) {
-      // Live: send the enquiry to the form service (e.g. Formspree)
-      try {
-        const res = await fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-        if (!res.ok) throw new Error('send failed');
-      } catch (err) {
-        alert('Sorry, that didn’t send. Please try again, or email hello@christinalawson.com.');
-        return;
-      }
-    } else {
-      // Until a form service is connected, hand the enquiry to the visitor's email app
-      const lines = [];
-      for (const [k, v] of data.entries()) if (v) lines.push(`${k}: ${v}`);
-      location.href = `mailto:hello@christinalawson.com?subject=${encodeURIComponent('Styling enquiry')}&body=${encodeURIComponent(lines.join('\n'))}`;
+    // Send the enquiry to Formspree; stay on the page and say so if it fails
+    const submit = book.querySelector('button[type="submit"]');
+    submit.disabled = true;
+    try {
+      const res = await fetch(book.dataset.endpoint || 'https://formspree.io/f/xdegejlj', { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error('send failed');
+    } catch (err) {
+      submit.disabled = false;
+      alert('Sorry, that didn’t send. Please try again, or email hello@christinalawson.com.');
+      return;
     }
     const name = (book.querySelector('#f-name').value || '').trim().split(' ')[0];
     book.hidden = true;
