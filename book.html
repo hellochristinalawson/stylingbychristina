@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a session · ALTER</title>
+<meta name="description" content="Choose your package, online or in Lisbon, and tell me what’s going on with your wardrobe.">
+<link rel="canonical" href="https://stylingbychristina.com/book.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ALTER · Styling by Christina">
+<meta property="og:title" content="Book a session · ALTER">
+<meta property="og:description" content="Choose your package, online or in Lisbon, and tell me what’s going on with your wardrobe.">
+<meta property="og:url" content="https://stylingbychristina.com/book.html">
+<meta property="og:image" content="https://stylingbychristina.com/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css?v=235">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <div class="hdr__in">
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="nav__l"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a></div>
+      <div class="nav__r"><a href="quiz.html">Free diagnosis</a><a href="book.html" aria-current="page">Book a session</a></div>
+    </nav>
+    <a class="logo" href="index.html" aria-label="ALTER, home"><span class="logo__word">ALTER</span><span class="logo__sub">Styling by Christina</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+
+<section class="contact">
+  <div class="contact__intro dark">
+    <div class="contact__intro-in">
+      <h1>Get in touch</h1>
+      <p>I work with men and women, and every collaboration starts with a conversation. Share a little about yourself and I’ll reply within two working days with next steps and available dates. Not sure which package suits you? Start with a free 20-minute call.</p>
+      <p class="label">Lisbon &amp; online · <a href="mailto:hello@christinalawson.com" style="color:inherit">hello@christinalawson.com</a></p>
+      <div class="ph contact__photo" style="background-image:url(img/stool.jpg); background-size:125% auto; background-position:52% 10%;" role="img" aria-label="Christina laughing, sitting on a stool"></div>
+    </div>
+  </div>
+  <div class="contact__form">
+    <form class="form" id="book-form" novalidate data-endpoint="">
+      <fieldset class="fieldset"><legend><b>01</b><span>Choose a package</span></legend>
+        <div class="choice choice--4">
+          <label class="choice__call"><input type="radio" name="package" value="call" required><span class="box"><strong>Free 20-minute call</strong><em>Free</em><small>Not sure where to start? Let’s talk it through first.</small></span></label>
+          <label><input type="radio" name="package" value="discovery"><span class="box"><strong>Style Discovery</strong><em><span class="cur">€</span>110</em><small>Find your direction</small></span></label>
+          <label><input type="radio" name="package" value="edit"><span class="box"><strong>Wardrobe Edit</strong><em><span class="cur">€</span>245</em><small>Edit what you own</small></span></label>
+          <label><input type="radio" name="package" value="builder"><span class="box"><strong>Outfit Builder</strong><em><span class="cur">€</span>345</em><small>Outfits for real moments</small></span></label>
+          <label><input type="radio" name="package" value="reset"><span class="box"><strong>Style Reset</strong><em><span class="cur">€</span>549</em><small>The full rebuild</small></span></label>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset cal" id="cal-step" hidden><legend><b>02</b><span>Pick a time</span></legend>
+        <p class="cal__intro">A relaxed 20-minute video call to talk through where you are and which package fits. Choose a time that suits you below.</p>
+        <!-- Add your cal.com link (e.g. "yourname/15min") to data-cal to switch the live calendar on -->
+        <div class="cal__frame" id="cal-frame" data-cal="christinalawson/20-minute-intro-call">
+          <div class="cal__placeholder"><strong>Your cal.com calendar appears here</strong><span>Add your booking link to go live.</span></div>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset" data-step="details"><legend><b>02</b><span>Where?</span></legend>
+        <div class="choice">
+          <label data-format="online"><input type="radio" name="format" value="online" checked><span class="box"><strong>Online</strong><small>Video call, photos, digital lookbook</small></span></label>
+          <label data-format="lisbon"><input type="radio" name="format" value="lisbon"><span class="box"><strong>In person, Lisbon</strong><small>At home or out shopping</small></span></label>
+        </div>
+        <p class="form__note" id="format-note" hidden></p>
+      </fieldset>
+      <fieldset class="fieldset" data-step="details"><legend><b>03</b><span>What’s it for?</span></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="for" value="work"><span>Work</span></label>
+          <label><input type="checkbox" name="for" value="brand"><span>Personal brand</span></label>
+          <label><input type="checkbox" name="for" value="stage"><span>Speaking or photos</span></label>
+          <label><input type="checkbox" name="for" value="date"><span>Dating</span></label>
+          <label><input type="checkbox" name="for" value="change"><span>A big change</span></label>
+          <label><input type="checkbox" name="for" value="everyday"><span>Easier everyday</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset" data-step="details"><legend><b>04</b><span>About you</span></legend>
+        <div class="fields">
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field--full"><label for="f-when">When would you like to start?</label><select id="f-when" name="when"><option>As soon as possible</option><option>In the next month</option><option>For a specific date</option><option>Just exploring</option></select></div>
+          <div class="field field--full"><label for="f-msg">What’s going on with your wardrobe?</label><textarea id="f-msg" name="message"></textarea></div>
+        </div>
+      </fieldset>
+      <div data-step="details"><button class="btn btn--fill" type="submit">Submit form ⟶</button></div>
+    </form>
+    <div class="success" id="book-ok" hidden>
+      <h2 class="h2" style="margin:0 0 18px">Thank you, <span class="serif" data-name></span>.</h2>
+      <p class="lead">I’m so glad you reached out. I’ll read through everything properly and get back to you within two working days with next steps and a few dates to choose from.</p>
+      <p class="lead">In the meantime, if you’re curious, the free diagnosis takes three minutes and gives you a few things to try straight away.</p>
+      <p class="success__sign">Speak soon,<br>Christina</p>
+      <div class="btn-row"><a class="btn btn--fill" href="quiz.html">Take the free diagnosis <span class="arr" aria-hidden="true"></span></a><a class="btn" href="index.html">Back to home</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="footer__row"><em>Explore</em><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="quiz.html">Free diagnosis</a><a href="book.html">Book</a></div>
+  <div class="footer__small"><span>© 2026 ALTER · Styling by Christina</span><span>Lisbon &amp; online</span><a href="mailto:hello@christinalawson.com">hello@christinalawson.com</a></div>
+</footer>
+<script src="main.js?v=235"></script>
+</body>
+</html>
